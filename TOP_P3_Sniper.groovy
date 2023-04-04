@@ -36,22 +36,22 @@ groovyTriggers.add({
 		log.info("[TOP_P3_Monitor_AM] HP Sniper: {}", hpSniperPlayers);
 		log.info("[TOP_P3_Monitor_AM] Non target: {}", nonTargetPlayers);
 
-		//s.accept(new SpecificAutoMarkRequest(sniperPlayers.get(0), MarkerSign.ATTACK1));
-		//s.accept(new SpecificAutoMarkRequest(sniperPlayers.get(1), MarkerSign.ATTACK2));
-		//s.accept(new SpecificAutoMarkRequest(sniperPlayers.get(2), MarkerSign.ATTACK3));
-		//s.accept(new SpecificAutoMarkRequest(sniperPlayers.get(3), MarkerSign.ATTACK4));
-		//s.accept(new SpecificAutoMarkRequest(hpSniperPlayers.get(0), MarkerSign.BIND1));
-		//s.accept(new SpecificAutoMarkRequest(hpSniperPlayers.get(1), MarkerSign.BIND2));
-		//s.accept(new SpecificAutoMarkRequest(hpSniperPlayers.get(0), MarkerSign.IGNORE1));
-		//s.accept(new SpecificAutoMarkRequest(hpSniperPlayers.get(1), MarkerSign.IGNORE2));
+		s.accept(new SpecificAutoMarkRequest(sniperPlayers.get(0), MarkerSign.ATTACK1));
+		s.accept(new SpecificAutoMarkRequest(sniperPlayers.get(1), MarkerSign.ATTACK2));
+		s.accept(new SpecificAutoMarkRequest(sniperPlayers.get(2), MarkerSign.ATTACK3));
+		s.accept(new SpecificAutoMarkRequest(sniperPlayers.get(3), MarkerSign.ATTACK4));
+		s.accept(new SpecificAutoMarkRequest(hpSniperPlayers.get(0), MarkerSign.BIND1));
+		s.accept(new SpecificAutoMarkRequest(hpSniperPlayers.get(1), MarkerSign.BIND2));
+		s.accept(new SpecificAutoMarkRequest(nonTargetPlayers.get(0), MarkerSign.IGNORE1));
+		s.accept(new SpecificAutoMarkRequest(nonTargetPlayers.get(1), MarkerSign.IGNORE2));
 
 		// Wait for rings to go off
 		// 7B4F = initial cast (inner circle)
 		// 7B50 = second circle
 		// 7B51 = third circle
 		// 7B52 = outermost circle
-		s.waitEvent(AbilityUsedEvent.class, aue -> aue.abilityIdMatches(0x7B52) && aue.isFirstTarget());
-		s.waitEvent(AbilityUsedEvent.class, aue -> aue.abilityIdMatches(0x7B52) && aue.isFirstTarget());
-		//s.accept(new ClearAutoMarkRequest());
+		s.waitEvent(AbilityUsedEvent.class, aue -> aue.abilityIdMatches(0x7B52) && aue.isFirstTarget()); // 1st time ring explosion
+		s.waitEvent(AbilityUsedEvent.class, aue -> aue.abilityIdMatches(0x7B52) && aue.isFirstTarget()); // 2nd time ring explosion
+		s.accept(new ClearAutoMarkRequest());
 	}
 });
