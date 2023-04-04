@@ -1,16 +1,13 @@
-// PROP: scriptName=TOP_P2_PS
-// PROP: strict=false
-// PROP: startup=true
 import java.time.Duration;
 import java.util.stream.Collectors;
 
 psJobPrio = [
 	Job.WHM, Job.AST, 
-     Job.PLD, Job.WAR, Job.GNB, Job.DRK, 
-     Job.NIN, Job.SAM, Job.MNK, Job.RPR, Job.DRG,
-     Job.BRD, Job.MCH, Job.DNC, 
-     Job.BLM, Job.RDM, Job.SMN, 
-     Job.SCH, Job.SGE
+	Job.PLD, Job.WAR, Job.GNB, Job.DRK, 
+	Job.NIN, Job.SAM, Job.MNK, Job.RPR, Job.DRG,
+	Job.BRD, Job.MCH, Job.DNC, 
+	Job.BLM, Job.RDM, Job.SMN, 
+	Job.SCH, Job.SGE
 ]
 
 class PsMarker implements Comparable<PsMarker> {
