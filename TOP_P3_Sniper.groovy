@@ -1,14 +1,11 @@
-// PROP: scriptName=TOP_P3_Sniper
-// PROP: strict=false
-// PROP: startup=false
 
 sniperJobPrio = [
 	Job.WHM, Job.AST, 
-     Job.PLD, Job.WAR, Job.GNB, Job.DRK, 
-     Job.NIN, Job.SAM, Job.MNK, Job.RPR, Job.DRG,
-     Job.BRD, Job.MCH, Job.DNC, 
-     Job.BLM, Job.RDM, Job.SMN, 
-     Job.SCH, Job.SGE
+	Job.PLD, Job.WAR, Job.GNB, Job.DRK, 
+	Job.NIN, Job.SAM, Job.MNK, Job.RPR, Job.DRG,
+	Job.BRD, Job.MCH, Job.DNC, 
+	Job.BLM, Job.RDM, Job.SMN, 
+	Job.SCH, Job.SGE
 ]
 
 
